@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "FPSObjective.generated.h"
 
+class USphereComponent;
+
 UCLASS()
 class FPSGAME_API AFPSObjective : public AActor
 {
@@ -16,6 +18,12 @@ public:
 	AFPSObjective();
 
 protected:
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UStaticMeshComponent* MeshComp;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	USphereComponent* SphereComp;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
